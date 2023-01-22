@@ -37,7 +37,7 @@
                 <div class="container theme-container rel-div">
                     <img class="pt-10 effect animated fadeInLeft" alt="" src="assets/img/icons/icon-1.png" />
                     <ul class="list-items fw-600 effect animated wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
-                        <li><a href="#">fast</a></li>
+                        <li><a href="#">fasts</a></li>
                         <li><a href="#">secured</a></li>
                         <li><a href="#">worldwide</a></li>
                     </ul>
