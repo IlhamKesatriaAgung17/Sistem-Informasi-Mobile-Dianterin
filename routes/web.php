@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
 // Route::get('kota',KotaController::class, 'kota'])->name('kota');
-Route::prefix('dashboards')->group(function () {
+Route::prefix('dashboard')->group(function () {
     Route::resource('kantor', App\Http\Controllers\KantorController::class);
     Route::resource('paket', App\Http\Controllers\PaketController::class);
 });
