@@ -73,14 +73,14 @@
             </section>
             <!-- /.Track Product -->
 
-            @include('contents.landing.about')
+            @include('contents.landing.tentang')
 
             <!-- Calculate Your Cost -->
-           @include('contents.landing.ongkir')
+           {{-- @include('contents.landing.ongkir') --}}
             <!-- /.Calculate Your Cost -->
 
             <!-- Pricing & Plans -->
-            @include('contents.landing.paket_pengriman')
+            {{-- @include('contents.landing.paket_pengriman') --}}
             <!-- /.Pricing & Plans -->
 
             <!-- Testimonial -->
@@ -88,7 +88,7 @@
             <!-- /.Testimonial -->
 
             <!-- Contact us -->
-            @include('contents.landing.kontak')
+            {{-- @include('contents.landing.kontak') --}}
             <!-- /.Contact us -->
         </article>
         <!-- /.Content Wrapper -->

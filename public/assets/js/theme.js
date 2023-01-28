@@ -96,11 +96,16 @@ $(function () {
     /*------- Google Map --------*/
     (function () {
         var LocationData = [
-            [49.2812668, -123.1035942, "26 E Hastings St, Vancouver"],
-            [49.2814064, -123.1025187, "71 E Hastings St, Vancouver"],
-            [49.2812336, -123.1020622, "122 E Hastings St, Vancouver"],
-            [49.2813564, -123.1012253, "138 E Hastings St, Vancouver"],
-            [49.2811625, -123.0985032, "242 E Hastings St, Vancouver"]
+            [-6.707737182269559,108.5263019778767,  "DTRN Tuparev"],
+            [-6.703475005336415,108.5409790252305, "DTRN Agen Pilang"],
+            [-6.715619394586669, 108.54631203387376, "DTRN Sutawinangun"],
+            [-6.723246874618887, 108.53202286999334, "DTRN Tria Cideng"],
+            [-6.7191563296248855, 108.55029414540752, "DTRN Cbng Utama Crbn"],
+            [-6.716306304953339, 108.5330606421947, "DTRN"],
+            [-6.699328883259912,  108.55896531306638, "DTRN Conter Jatara"],
+            [-6.715079084223527,  108.54562164649828, "DTRN Pecilon"],
+            [-6.7124807111396745,  108.54469900560227, "DTRN Kepudang"],
+            [-6.7124807111396745,  108.54469900560227, "DTRN Kepudang"],
         ];
 
         function initialize()

@@ -1,5 +1,4 @@
-@extends('layouts.landing')
-@section('content')
+
 <!-- About Us -->
 <section class="pad-80 about-wrap clrbg-before" id="tentang">
     <span class="bg-text wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">Tentang Kami </span>
@@ -44,5 +43,5 @@
     </div>
 </section>
 <!-- /.About Us -->
-@endsection
+
 

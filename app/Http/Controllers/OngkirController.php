@@ -66,7 +66,7 @@ class OngkirController extends Controller
         }
 
         $provinsi = Province::all();
-        return view('contents.landing.index',compact('provinsi','cekongkir'));
+        return view('contents.landing.ongkir',compact('provinsi','cekongkir'));
         // return $response['rajaongkir']['results'][0];
 
     }

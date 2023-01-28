@@ -22,7 +22,7 @@
                     <h2 class="title-1 fw-900">Paket Pengiriman</h2>
                     <ul>
                         <li> <a href="#">DIANTERIN OKE</a> </li>
-                        <li> <a href="#">DIANTERIN CARGO</a> </li>
+                        <li> <a href="#">DIANTERIN YES</a> </li>
                         <li> <a href="#">DIANTERIN REGULER</a> </li>
                     </ul>
                 </div>

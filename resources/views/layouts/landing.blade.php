@@ -30,6 +30,7 @@
     <body>
         @include('layouts.landing.navbar')
         @yield('content')
+
         @include('layouts.landing.footer')
 
      <!-- Main Jquery JS -->
@@ -47,12 +48,11 @@
      <!-- Data binder -->
      <script src="{{asset('assets/plugins/data.binder.js/data.binder.js')}}" type="text/javascript"></script>
 
-     <!-- Slider JS -->
-
-
-     <!-- Theme JS -->
      <script src="{{asset('assets/js/theme.js')}}" type="text/javascript"></script>
+     <!-- Map JS -->
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
 
+     <!-- Slider JS -->
      {{-- <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> --}}
 
 

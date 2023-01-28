@@ -1,3 +1,6 @@
+@extends('layouts.landing')
+@section('content')
+
 <section class="calculate pt-100" id="cek-ongkir">
     <div class="theme-container container">
         <span class="bg-text right wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s"> Cek Ongkir</span>
@@ -10,7 +13,7 @@
                 <h2 class="section-title pb-10 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s" > Cek Ongkir </h2>
                 <p class="fs-16 wow fadeInUp" data-wow-offset="50" data-wow-delay=".25s">Silahkan cek ongkos kirim anda berdasarkan tempat yang ingin dituju</p>
                 <div class="calculate-form">
-                    <form class="row" action="{{route('index')}}" method="GET">
+                    <form class="row" action="{{route('cek-ongkir')}}" method="GET">
                         @csrf
                         {{-- <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-3"> <label class="title-2"> Nama </label></div>
@@ -177,4 +180,6 @@
     <div class="step-img wow slideInRight" data-wow-offset="50" data-wow-delay=".20s"> <img src="assets/img/block/step-img.png" alt="" /> </div>
 </section>
 <!-- /.Steps -->
+
+@endsection
 
