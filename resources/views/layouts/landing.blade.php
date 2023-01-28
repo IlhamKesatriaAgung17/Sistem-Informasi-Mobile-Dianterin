@@ -52,5 +52,53 @@
 
      <!-- Theme JS -->
      <script src="{{asset('assets/js/theme.js')}}" type="text/javascript"></script>
+
+     {{-- <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> --}}
+
+
+     <script type="text/javascript">
+        $(document).ready(function () {
+            $('select[name="province_from"]').on('change', function () {
+                var cityId = $(this).val();
+                if (cityId) {
+                    $.ajax({
+                        url: 'getCity/ajax/' + cityId,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            $('select[name="origin"]').empty();
+                            $.each(data, function (key, value) {
+                                $('select[name="origin"]').append(
+                                    '<option value="' +
+                                    key + '">' + value + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('select[name="origin"]').empty();
+                }
+            });
+            $('select[name="province_to"]').on('change', function () {
+                var cityId = $(this).val();
+                if (cityId) {
+                    $.ajax({
+                        url: 'getCity/ajax/' + cityId,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            $('select[name="destination"]').empty();
+                            $.each(data, function (key, value) {
+                                $('select[name="destination"]').append(
+                                    '<option value="' +
+                                    key + '">' + value + '</option>');
+                            });
+                        }
+                    });
+                } else {
+                    $('select[name="destination"]').empty();
+                }
+            });
+        });
+    </script>
     </body>
 </html>

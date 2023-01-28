@@ -19,15 +19,15 @@ class IndoRegionRegencySeeder extends Seeder
      * Run the database seeds.
      *
      * @deprecated
-     * 
+     *
      * @return void
      */
     public function run()
     {
         // Get Data
-        $regencies = RawDataGetter::getRegencies();
+       // $regencies = RawDataGetter::getRegencies();
 
         // Insert Data to Database
-        DB::table('regencies')->insert($regencies);
+        //DB::table('regencies')->insert($regencies);
     }
 }

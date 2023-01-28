@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\RegencyController;
+use App\Http\Controllers\OngkirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('index');
+// Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('index');
+
+Route::get('/',[OngkirController::class, 'index'])->name('index');
+Route::get('getCity/ajax/{id}',[OngkirController::class, 'ajax']);
 
 Auth::routes([
     'register' => true

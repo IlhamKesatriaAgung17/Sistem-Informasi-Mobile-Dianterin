@@ -94,5 +94,6 @@
         <!-- /.Content Wrapper -->
     </main>
     <!-- / Main Wrapper -->
+
 </body>
 @endsection

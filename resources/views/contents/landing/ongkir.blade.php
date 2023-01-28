@@ -10,22 +10,60 @@
                 <h2 class="section-title pb-10 wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s" > Cek Ongkir </h2>
                 <p class="fs-16 wow fadeInUp" data-wow-offset="50" data-wow-delay=".25s">Silahkan cek ongkos kirim anda berdasarkan tempat yang ingin dituju</p>
                 <div class="calculate-form">
-                    <form class="row">
+                    <form class="row" action="{{route('index')}}" method="GET">
+                        @csrf
+                        {{-- <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
+                            <div class="col-sm-3"> <label class="title-2"> Nama </label></div>
+                            <div class="col-sm-9"> <input data-bind="in:value, f: float" data-name="height" type="text" placeholder="" class="form-control"> </div>
+                        </div> --}}
                         <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-3"> <label class="title-2"> Provinsi Pengirim </label></div>
-                            <div class="col-sm-9"> <input data-bind="in:value, f: float" data-name="height" type="text" placeholder="" class="form-control"> </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <select data-bind="in:value" name="province_from" data-name="package" class="selectpicker form-control" data-live-search="true" data-width="100%" data-toggle="tooltip" title="Pilih Provinsi" required>
+                                        <option value="">Pilih Provinsi</option>
+                                        @foreach ($provinsi as $data )
+                                            <option value="{{$data->id}}">{{$data->province}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-3"> <label class="title-2"> Kota/Kabupaten Pengirim </label></div>
-                            <div class="col-sm-9"> <input data-bind="in:value, f: float" data-name="width" type="text" placeholder="" class="form-control"> </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <select data-bind="in:value" data-name="package" class="form-select form-control" data-live-search="true" data-width="100%" data-toggle="tooltip"  name="origin" id="origin" title="Pilih Kota/Kabupaten" required>
+                                        <option value="" holder>Pilih Kota/Kabupaten</option>
+                                        {{-- @foreach ($cities as $data )
+                                            <option value="{{$data->id}}">{{$data->city_name}}</option>
+                                        @endforeach --}}
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-3"> <label class="title-2"> Provinsi Penerima: </label></div>
-                            <div class="col-sm-9"> <input data-bind="in:value, f: float" data-name="depth" type="text" placeholder="" class="form-control"> </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <select data-bind="in:value" name="province_to" data-name="package" class="selectpicker form-control" data-live-search="true" data-width="100%" data-toggle="tooltip" title="Pilih Provinsi" required>
+                                        <option value="">Pilih Provinsi</option>
+                                        @foreach ($provinsi as $data )
+                                            <option value="{{$data->id}}">{{$data->province}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-3"> <label class="title-2"> Kota/Kabupaten Penerima: </label></div>
-                            <div class="col-sm-9"> <input data-bind="in:value, f: float" data-name="weight" type="text" placeholder="" class="form-control"> </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <select data-bind="in:value" name="destination" data-name="package" class="form-select form-control" data-live-search="true" data-width="100%" data-toggle="tooltip" title="Pilih Kota/Kabupaten" required>
+                                        <bold><option value="">Pilih Kota/Kabupaten</option></bold>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         {{-- <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-3"> <label class="title-2"> location: </label></div>
@@ -39,34 +77,75 @@
                             </div>
                         </div> --}}
                         <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
+                            <div class="col-sm-3"> <label class="title-2"> Berat </label></div>
+                            <div class="col-sm-9">
+                                <input data-bind="in:value, f: float" name="weight" data-name="height" type="text" placeholder="" class="form-control" required>
+                                <small>Isikan dalam satuan gram misalnya = 1000 = 1 kg</small>
+                            </div>
+                        </div>
+                        {{-- <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-3"> <label class="title-2"> Paket Pengiriman </label></div>
                             <div class="col-sm-9">
                                 <div class="form-group">
-                                    <select data-bind="in:value" data-name="package" class="selectpicker form-control" data-live-search="true" data-width="100%"
-                                            data-toggle="tooltip" title="select your package">
-                                        <option value="cost">Paket Pengirman</option>
-                                        <option value="cost + 25">Fastest Delivery: + $25</option>
-                                        <option value="cost*0.9">Discount Delivery: -10%</option>
+                                    <select data-bind="in:value" name="courier" data-name="package" class="selectpicker form-control" data-live-search="true" data-width="100%" required
+                                            data-toggle="tooltip" title="Pilih Paket Pengiriman">
+                                        <option value="" holder>Pilih Paket Pengiriman</option>
+                                        <option value="jne">Dianterin 1</option>
+                                        <option value="tiki">Dianterin 2</option>
+                                        <option value="post">Dianterin 3</option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".20s">
                             <div class="col-sm-9 col-xs-12 pull-right">
-                                <div class="btn-1"> <span> Cek Ongkir </span>
-                                    <span data-bind="out:price, f:currency" data-name="cost" class="btn-1 dark">
+                                <button type="submit" class="btn btn-1 btn-block" style="text-align: center">
+                                    <span> Cek Ongkir</span>
+                                    {{-- <span data-bind="out:price, f:currency" data-name="cost" class="btn-1 dark">
                                         <span class="pr-sign">-&nbsp;</span> $<span class="pr-wrap" style="display: none;"><span class="pr">0</span></span>
-                                    </span>
-                                </div>
+                                    </span> --}}
+                                </button>
                             </div>
                         </div>
                     </form>
+                    @if ($cekongkir)
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-striped tab-bordered table-hover" width="100%">
+                                <thead>
+                                    <tr>
+                                       <th>Service</th>
+                                       <th>Deskripsi</th>
+                                       <th>Harga</th>
+                                       <th>Estimasi</th>
+                                       <th>Catatan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($cekongkir as $data)
+                                    <tr>
+                                        <td>{{$data['service']}}</td>
+                                        <td>{{$data['description']}}</td>
+                                        <td>{{$data['cost'][0]['value']}}</td>
+                                        <td> {{$data['cost'][0]['etd']}} hari</td>
+                                        <td>{{$data['cost'][0]['note']}}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    @else
+
+                    @endif
+
                 </div>
                 <div class="pt-80 hidden-lg"></div>
             </div>
         </div>
     </div>
 </section>
+<br>
 
 <!-- Steps -->
 <section class="steps-wrap mask-overlay pad-80">
@@ -98,3 +177,4 @@
     <div class="step-img wow slideInRight" data-wow-offset="50" data-wow-delay=".20s"> <img src="assets/img/block/step-img.png" alt="" /> </div>
 </section>
 <!-- /.Steps -->
+

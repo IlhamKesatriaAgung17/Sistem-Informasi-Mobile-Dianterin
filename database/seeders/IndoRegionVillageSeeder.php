@@ -25,15 +25,15 @@ class IndoRegionVillageSeeder extends Seeder
     public function run()
     {
         // Get Data
-        $villages = RawDataGetter::getVillages();
+        //$villages = RawDataGetter::getVillages();
 
         // Insert Data with Chunk
-        DB::transaction(function() use($villages) {
-            $collection = collect($villages);
-            $parts = $collection->chunk(1000);
-            foreach ($parts as $subset) {
-                DB::table('villages')->insert($subset->toArray());
-            }
-        });
+        // DB::transaction(function() use($villages) {
+        //     $collection = collect($villages);
+        //     $parts = $collection->chunk(1000);
+        //     foreach ($parts as $subset) {
+        //         DB::table('villages')->insert($subset->toArray());
+        //     }
+        // });
     }
 }
