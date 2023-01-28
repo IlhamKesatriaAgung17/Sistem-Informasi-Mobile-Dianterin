@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('index');
 
 Auth::routes([
-    'register' => false
+    'register' => true
 ]);
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
