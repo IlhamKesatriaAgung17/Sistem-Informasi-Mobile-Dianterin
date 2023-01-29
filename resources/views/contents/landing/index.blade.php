@@ -52,21 +52,59 @@
                 <div class="theme-container container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 track-prod clrbg-before wow slideInUp" data-wow-offset="50" data-wow-delay=".20s">
-                            <h2 class="title-1"> Lacak Paket Kamu</h2> <span class="font2-light fs-12">Sekarang kamu dapat melacak paket kamu dengan mudah</span>
-                            <div class="row">
-                                <form class="">
-                                    <div class="col-md-7 col-sm-7">
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Masukan No Resi" required="" class="form-control box-shadow">
-                                        </div>
+                            @if (Route::has('login'))
+                                @auth
+                                    @if (Auth()->user()->role==1)
+                                    <h2 class="title-1"> Lacak Paket Kamu</h2> <span class="font2-light fs-12"><b>Silahkan lacak paket Anda disini !</b></span>
+                                    <div class="row">
+                                        <form class="">
+                                            <div class="col-md-7 col-sm-7">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Masukan No Resi" required="" class="form-control box-shadow">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn-1">Lacak Paket</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="col-md-5 col-sm-5">
-                                        <div class="form-group">
-                                            <button class="btn-1">Lacak Paket</button>
-                                        </div>
+                                    @elseif (Auth()->user()->role==2)
+                                    <h2 class="title-1"> Lacak Paket Kamu</h2> <span class="font2-light fs-12"><b>Silahkan lacak paket Anda disini !</b></span>
+                                    <div class="row">
+                                        <form class="">
+                                            <div class="col-md-7 col-sm-7">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Masukan No Resi" required="" class="form-control box-shadow">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn-1">Lacak Paket</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
-                            </div>
+                                    @endif
+                                    @else
+                                    <h2 class="title-1"> Lacak Paket Kamu</h2> <span class="fs-12 font2-light"><b> Untuk melacak paket Anda, silahkan login terlebih dahulu !</b></span>
+                                    <div class="row">
+                                        <form class="">
+                                            <div class="col-md-7 col-sm-7">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Masukan No Resi" required="" class="form-control box-shadow">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-5">
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn-1"><a href="{{route('login')}}">Lacak Paket</a></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                @endauth
+                            @endif
                         </div>
                     </div>
                 </div>

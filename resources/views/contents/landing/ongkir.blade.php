@@ -112,7 +112,7 @@
                         </div>
                     </form>
                     @if ($cekongkir)
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col">
                             <table class="table table-striped tab-bordered table-hover" width="100%">
                                 <thead>
@@ -136,6 +136,22 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                        </div>
+                    </div> --}}
+                    <div class="row">
+                        <div class="col-md-12 pad-30 wow fadeInRight" data-wow-offset="50" data-wow-delay=".30s">
+                            <div class="prod-info white-clr" style="background-color: rgb(78, 78, 240)">
+                                @foreach ($cekongkir as $data)
+                                <ul>
+                                    <li> <span class="title-2">Paket Pengiriman:</span> <span class="fs-16">Dianterin {{$data['service']}}</span> </li>
+                                    <li> <span class="title-2">Deskripsi:</span> <span class="fs-16">{{$data['description']}}</span> </li>
+                                    <li> <span class="title-2">Harga:</span> <span class="fs-16">{{$data['cost'][0]['value']}}</span> </li>
+                                    <li> <span class="title-2">Estimasi:</span> <span class="fs-16">{{$data['cost'][0]['etd']}} hari</span> </li>
+                                    <li> <span class="title-2 text-white">status:</span> <span>Yes</span> </li>
+                                    {{-- <li> <span class="title-2">Catatan:</span> <span class="fs-16">{{$data['cost'][0]['note']}}</span> </li> --}}
+                                </ul>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     @else
