@@ -98,7 +98,7 @@
                                             </div>
                                             <div class="col-md-5 col-sm-5">
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn-1"><a href="{{route('login')}}">Lacak Paket</a></button>
+                                                    <a href="{{route('login')}}" class="btn btn-block btn-1">Lacak Paket</a>
                                                 </div>
                                             </div>
                                         </form>

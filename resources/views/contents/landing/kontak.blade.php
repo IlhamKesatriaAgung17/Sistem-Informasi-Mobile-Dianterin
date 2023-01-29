@@ -55,26 +55,27 @@
 
                 <div class="col-md-5 col-sm-6 col-md-offset-1 contact-form">
                     <div class="calculate-form">
-                        <form class="row" id="contact-form">
+                        <form class="row" method="POST" action="{{route('hubungikami.kirim')}}" encytype="multipart/form-data">
+                            @csrf
                             <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".30s">
                                 <div class="col-sm-3"> <label class="title-2"> Nama: </label></div>
-                                <div class="col-sm-9"> <input type="text" name="Name" id="Name" required placeholder="" class="form-control"> </div>
+                                <div class="col-sm-9"> <input type="text" name="name" id="name" required placeholder="" class="form-control"> </div>
                             </div>
                             <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".30s">
                                 <div class="col-sm-3"> <label class="title-2"> Email: </label></div>
-                                <div class="col-sm-9"> <input type="text" name="Email" id="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="" class="form-control"> </div>
+                                <div class="col-sm-9"> <input type="text" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="" class="form-control"> </div>
                             </div>
                             <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".30s">
                                 <div class="col-sm-3"> <label class="title-2"> No.HP: </label></div>
-                                <div class="col-sm-9"> <input type="text" name="Phone" id="Phone" placeholder="" class="form-control"> </div>
+                                <div class="col-sm-9"> <input type="text" name="phone" id="phone" placeholder="" class="form-control"> </div>
                             </div>
                             <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".30s">
                                 <div class="col-sm-3"> <label class="title-2"> Pesan: </label></div>
-                                <div class="col-sm-9"> <textarea class="form-control" name="Message" id="Message" required cols="25" rows="3"></textarea> </div>
+                                <div class="col-sm-9"> <textarea class="form-control" name="message" id="message" required cols="25" rows="3"></textarea> </div>
                             </div>
                             <div class="form-group wow fadeInUp" data-wow-offset="50" data-wow-delay=".30s">
                                 <div class="col-sm-9 col-xs-12 pull-right">
-                                    <button name="submit" id="submit_btn" class="btn-1"> Kirim Pesan </button>
+                                    <button name="submit"  class="btn-1"> Kirim Pesan </button>
                                 </div>
                             </div>
                         </form>

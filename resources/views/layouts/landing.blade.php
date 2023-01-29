@@ -51,6 +51,7 @@
      <script src="{{asset('assets/js/theme.js')}}" type="text/javascript"></script>
      <!-- Map JS -->
      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+     @include('sweetalert::alert')
 
      <!-- Slider JS -->
      {{-- <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> --}}

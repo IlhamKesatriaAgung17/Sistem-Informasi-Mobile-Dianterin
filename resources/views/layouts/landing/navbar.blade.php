@@ -130,8 +130,8 @@
                             <li class="nav-item {{ Route::is('cek-ongkir') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{route('cek-ongkir')}}"> Cek Ongkir </a>
                             </li>
-                            <li class="nav-item {{ Route::is('hubungi-kami') ? 'active' : '' }}">
-                                <a class="nav-link" href="{{route('hubungi-kami')}}">Hubungi Kami </a>
+                            <li class="nav-item {{ Route::is('hubungikami.form') ? 'active' : '' }}">
+                                <a class="nav-link" href="{{route('hubungikami.form')}}">Hubungi Kami </a>
                             </li>
                             {{-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" >Blog</a>
