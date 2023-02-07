@@ -83,7 +83,7 @@
 <header class="header-main header-style3">
 
     <!-- Header Topbar -->
-    <div class="top-bar2 " style="background-color: rgb(0, 0, 0)">
+    <div class="top-bar2 " style="background-color: rgb(46, 46, 46)">
         <div class="theme-container container">
             <div class="row">
                 <div class="col-md-2 col-sm-12">
@@ -103,7 +103,7 @@
     <!-- /.Header Topbar -->
 
     <!-- Header Logo & Navigation -->
-    <nav class="menu-bar font2-title1 white-clr" style="background-color: rgb(244, 155, 38)">
+    <nav class="menu-bar font2-title1 orange-clr" style="background-color: white">
         <div class="theme-container container">
             <div class="row">
                 <div class="col-xs-12 visible-xs">
@@ -113,14 +113,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="visible-xs">
+                    {{-- <div class="visible-xs">
                         <a data-toggle="modal" href="{{route('login')}}" class="login fs-12 black-bg">Login </a>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-md-10 col-sm-10 col-xs-12 fs-12">
                     <a class="sticky-logo hidden-sm" href="index-2.html"> <img alt="" src="{{asset('assets/img/logo/rsz_logo5.png')}}" /> </a>
                     <div id="navbar" class="collapse navbar-collapse no-pad">
-                        <ul class="navbar-nav theme-menu">
+                        <ul class="navbar-nav theme-menu text-dark">
                             <li class="nav-item {{ Route::is('index') ? 'active' : '' }}">
                                 <a class="nav-link" href="{{route('index')}}" >Beranda</a>
                             </li>
@@ -148,12 +148,12 @@
                 @if (Route::has('login'))
                     @auth
                         @if (Auth()->user()->role==1)
-                        <div class="col-md-2 col-sm-2 text-right hidden-xs">
-                            <a data-toggle="modal" href="{{route('admin.dashboard')}}" class="sign-in fs-12"  style="background-color: rgb(62, 48, 255)">{{Auth::user()->name}}</a>
+                        <div class="col-md-2 col-sm-2 text-right hidden-xs white-clr">
+                            <a data-toggle="modal" href="{{route('admin.dashboard')}}" class="sign-in fs-12"  style="background-color: rgb(45, 41, 101)">{{Auth::user()->name}}</a>
                         </div>
                         @elseif (Auth()->user()->role==2)
-                            <li class="col-md-2 col-sm-2 text-right hidden-xs dropdown">
-                                <a href="#" class="sign-in fs-12 dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" style="background-color: rgb(62, 48, 255)">{{Auth::user()->name}}</a>
+                            <li class="col-md-2 col-sm-2 text-right hidden-xs dropdown white-clr">
+                                <a href="#" class="sign-in fs-12 dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" style="background-color: rgb(45, 41, 101)">{{Auth::user()->name}}</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-left"></i>Logout</a></li>
                                 </ul>
@@ -163,8 +163,8 @@
                         </form>
                         @endif
                     @else
-                    <div class="col-md-2 col-sm-2 text-right hidden-xs">
-                        <a data-toggle="modal" href="{{route('login')}}" class="sign-in fs-12"  style="background-color: rgb(62, 48, 255)">Login</a>
+                    <div class="col-md-2 col-sm-2 text-right hidden-xs white-clr">
+                        <a data-toggle="modal" href="{{route('login')}}" class="sign-in fs-12"  style="background-color: rgb(45, 41, 101)"><span class="white-clr">Login</span></a>
                     </div>
                     @endauth
 

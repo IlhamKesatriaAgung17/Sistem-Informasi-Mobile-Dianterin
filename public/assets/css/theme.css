@@ -346,8 +346,11 @@ img{
     right: 0;
     margin: auto
 }
-.white-clr, .white-clr .section-title, .white-clr .title-1, .white-clr .title-2, .white-clr .title-3, .white-clr p, .white-clr a {
-    color: #fff;
+.orange-clr, .white-clr .section-title, .white-clr .title-1, .white-clr .title-2, .white-clr .title-3, .white-clr p, .white-clr a .white-clr span {
+    color: rgb(251, 251, 251);
+}
+.orange-clr, .orange-clr .section-title, .orange-clr .title-1, .orange-clr .title-2, .orange-clr .title-3, .orange-clr p, .orange-clr a {
+    color: rgb(255, 132, 0);
 }
 .black-clr, .black-clr a {
     color: #222222;
